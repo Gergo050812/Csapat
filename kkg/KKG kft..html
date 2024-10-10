@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KKG Kft.</title>
+    <link rel="stylesheet" href="testcss.css">
+</head>
+<body>
+    <header>
+        <h1>KKG Kft.</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showDefault()">Kezdőoldal</a></li>
+                <li><a href="#" onclick="showImage('fonoki-szoba')">Főnöki Szoba</a></li>
+                <li><a href="#" onclick="showImage('iroda')">Iroda</a></li>
+                <li><a href="#" onclick="showImage('tarsalgo')">Társalgó</a></li>
+                <li><a href="#" onclick="showImage('szerver-szoba')">Szerver Szoba</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="content">
+            <!-- Alapértelmezett szöveges tartalom -->
+            <h2>Főnöki Szoba</h2>
+            <p>A főnöki szoba a cég szíve, ahol a fontos döntések születnek.</p>
+
+            <h2>Iroda</h2>
+            <p>Az iroda helyet ad az alkalmazottak munkájának, modern munkakörnyezetet biztosítva.</p>
+
+            <h2>Társalgó</h2>
+            <p>A társalgóban az alkalmazottak pihenhetnek, és baráti beszélgetéseket folytathatnak.</p>
+
+            <h2>Szerver Szoba</h2>
+            <p>A szerver szoba az informatikai infrastruktúra központja, ahol a vállalat adatainak tárolása történik.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KKG Kft. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+        function showImage(room) {
+            let content = document.getElementById('content');
+            let htmlContent = '';
+
+            switch(room) {
+                case 'fonoki-szoba':
+                    htmlContent = `<h2>Főnöki Szoba</h2><img src="fonoki-szoba.jpg" alt="Főnöki szoba képe">`;
+                    break;
+                case 'iroda':
+                    htmlContent = `<h2>Iroda</h2><img src="iroda.jpg" alt="Iroda képe">`;
+                    break;
+                case 'tarsalgo':
+                    htmlContent = `<h2>Társalgó</h2><img src="tarsalgo.jpg" alt="Társalgó képe">`;
+                    break;
+                case 'szerver-szoba':
+                    htmlContent = `<h2>Szerver Szoba</h2><img src="szerver-szoba.jpg" alt="Szerver szoba képe">`;
+                    break;
+            }
+
+            htmlContent += `<br><br><button onclick="showDefault()">Vissza a kezdőoldalra</button>`;
+            content.innerHTML = htmlContent;
+        }
+
+        function showDefault() {
+            let content = document.getElementById('content');
+            content.innerHTML = `
+                <h2>Főnöki Szoba</h2>
+                <p>A főnöki szoba a cég szíve, ahol a fontos döntések születnek.</p>
+
+                <h2>Iroda</h2>
+                <p>Az iroda helyet ad az alkalmazottak munkájának, modern munkakörnyezetet biztosítva.</p>
+
+                <h2>Társalgó</h2>
+                <p>A társalgóban az alkalmazottak pihenhetnek, és baráti beszélgetéseket folytathatnak.</p>
+
+                <h2>Szerver Szoba</h2>
+                <p>A szerver szoba az informatikai infrastruktúra központja, ahol a vállalat adatainak tárolása történik.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
